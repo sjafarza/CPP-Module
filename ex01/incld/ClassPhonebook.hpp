@@ -14,7 +14,11 @@
 #define CLASSPHONEBOOK_H
 
 #include "ClassContact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 class   Phonebook
 {
@@ -27,9 +31,10 @@ class   Phonebook
 		~Phonebook(void);
 
 		void	addContact(void);
-		bool	isFull(void) const;
 		void	listContact(void) const;
 		void	displayContact(std::string index) const;
+		bool	is_number(std::string str) const;
+
 };
 
 #endif 

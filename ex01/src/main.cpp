@@ -28,7 +28,7 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "\ntype ADD or SEARCH or EXIT pleas .";
+		std::cout << "\n Type ADD or SEARCH or EXIT pleas .";
 		std::cout << std::endl << "> ";
 		if (!(std::getline(std::cin, input)) ||
 			input.compare("EXIT") == 0)
@@ -44,7 +44,7 @@ int main(void)
 			std::cout << std::endl << "Type an index to display: ";
 			if (!std::getline(std::cin, index))
 			{
-				std::cout << "Leaving...  !" << std::endl;
+				std::cout << "Error , Leaving...  !" << std::endl;
 				break ;
 			}
 			phonebook.displayContact(index);

@@ -36,10 +36,10 @@ void    Contact::setContact(std::string first, std::string last, std::string nic
 void    Contact::truncDisplay(void) const
 {
     std::cout
+    << std::setw(10) << this->_index << "|"
     << std::setw(10) << truncateEntry(this->_firstName, 10) << "|" 
     << std::setw(10) << truncateEntry(this->_lastName, 10) << "|"
     << std::setw(10) << truncateEntry(this->_nickName, 10) << "|"
-    << std::setw(10) << this->_index
     << std::endl;
     return ;
 }
