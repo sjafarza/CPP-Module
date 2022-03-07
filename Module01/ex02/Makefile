@@ -1,10 +1,10 @@
-NAME	=	brainz
+NAME	=	Brain
 
 VPATH	=	src
 OBJDIR	=	obj
 INCDIR	=	inc 
 
-SRC 	=	main.cpp zombieHorde.cpp ClassZombie.cpp
+SRC 	=	main.cpp 
 OBJ 	=	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
 CC		=	clang++
