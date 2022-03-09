@@ -5,6 +5,6 @@
 # include <iostream>
 
 void randomChump( std::string name );
-ClassZombie* newZombie( std::string name);
+Zombie* newZombie( std::string name);
 
 #endif

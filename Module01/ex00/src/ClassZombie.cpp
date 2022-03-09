@@ -1,15 +1,16 @@
 #include "ClassZombie.hpp"
 
-ClassZombie::ClassZombie(std::string name)
+Zombie::Zombie(std::string name)
 {
     this->_name = name;
 }
 
-ClassZombie::~ClassZombie()
+Zombie::~Zombie()
 {
+    std::cout<< "Good Bye !\n";
 }
 
-void    ClassZombie::announceName(void) const
+void    Zombie::announceName(void) const
 {
     std::cout << this->_name
     << " : "

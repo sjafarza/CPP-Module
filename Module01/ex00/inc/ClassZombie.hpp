@@ -1,16 +1,16 @@
-#ifndef CLASSZOMBIE_HPP
-# define CLASSZOMBIE_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
 
-class ClassZombie
+class Zombie
 {
 private:
     std::string _name;
 
 public:
-    ClassZombie(std::string name);
-    ~ClassZombie();
+    Zombie(std::string name);
+    ~Zombie();
 
     void    announceName(void) const;
 

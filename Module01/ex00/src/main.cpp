@@ -14,7 +14,7 @@ int main(int ac, char **av)
     (void)ac;
     (void)av;
 
-    ClassZombie *zombie;
+    Zombie *zombie;
 
     if (ac > 2)
     {

@@ -1,8 +1,8 @@
 #include "Brainz.hpp"
 
-ClassZombie* newZombie( std::string name)
+Zombie* newZombie( std::string name)
 {
-    ClassZombie *zombie = new ClassZombie(name);
+    Zombie *zombie = new Zombie(name);
 
     zombie->announceName();
 
