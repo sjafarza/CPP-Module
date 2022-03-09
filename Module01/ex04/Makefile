@@ -1,4 +1,4 @@
-NAME	=	Replace
+NAME	=	Sed
 
 VPATH	=	src
 OBJDIR	=	obj

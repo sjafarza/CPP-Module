@@ -11,7 +11,7 @@ void    replace(char **av)
     std::ifstream   ifs(fileName.c_str());
     if (s1.empty() || s2.empty())
     {
-        std::cout << "Error: strings can not be emplty !";
+        std::cout << "Error: strings can not be empty !";
         return ;
     }
 
@@ -22,6 +22,7 @@ void    replace(char **av)
 int main(int ac, char **av)
 {
     std::string     fileName = av[1];
+    std::ifstream   fileStream(fileName);
     Stream           stream(fileName);
 
     if (ac != 4)
@@ -34,10 +35,11 @@ int main(int ac, char **av)
         std::cout << "Error: strings can not be emplty !\n";
         return (1);
     }
-    if (!stream.replace(av[2], av[3]))
+    if (!stream.file_is_exist(fileStream))
     {
         std::cout << "Error:File innaccessible or non existing .\n";
         return (1);
     }
+    stream.replace(av[2], av[3]);
     return (0);
 }

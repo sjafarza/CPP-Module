@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <fstream>
+# include <cstring> 
 # include <string> 
 
 class Stream
@@ -14,9 +15,9 @@ class Stream
             Stream(std::string fileName);
             ~Stream();
 
-            bool    file_is_exist(std::string fileName);
+            bool    file_is_exist(std::ifstream& fileName);
             bool    str_is_empty(std::string s1, std::string s2);
-            bool    replace(std::string s1, std::string s2);
+            void    replace(std::string s1, std::string s2);
 
 
 };
