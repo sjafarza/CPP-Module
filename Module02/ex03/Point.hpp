@@ -8,21 +8,24 @@
 class Point
 {
     private:
-        Fixed   _x;
-        Fixed   _y;
+        Fixed const  _x;
+        Fixed const  _y;
     
     public:
     /* constructor */
        Point(void);
-       Point(Fixed const x, Fixed const y);
+       Point(Fixed const& x, Fixed const& y);
 
     /* Destructor */
         ~Point(void);
 
     /* copy Constructor*/
-        Point(Point &pp);
-        Point &operator=(Point const &pp);
+        Point(Point const &pp);
+        
     /* operation  overload */
+        Point &operator=(Point const &pp);
+	    bool operator==(Point const &other) const;
+
         Fixed getX(void) const;
 	    Fixed getY(void) const;
 
