@@ -36,7 +36,6 @@ clean:
 
 fclean:			clean
 				@rm -rf $(NAME) $(OBJDIR)
-				@echo "\033[0;31m\nDone !"
 
 re:				fclean all
 

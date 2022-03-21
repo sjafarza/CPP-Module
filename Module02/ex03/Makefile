@@ -4,7 +4,7 @@ VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Fixed.cpp
+SRC 		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
@@ -16,8 +16,9 @@ RM			=	rm -rf
 UNAME           :=      $(shell uname -s)
 
 all:			$(NAME)
+
 $(OBJDIR)/%.o:	%.cpp | $(OBJDIR)
-					@c++ $(CFLAGS) -c $< -o $@
+					@c++ $(CFLAGS)  -c $< -o $@
 
 $(NAME):		$(OBJ)
 				@echo "\033[032m\n\nCompiling canon... "
@@ -36,7 +37,6 @@ clean:
 
 fclean:			clean
 				@rm -rf $(NAME) $(OBJDIR)
-				@echo "\033[0;31m\nDone !"
 
 re:				fclean all
 
