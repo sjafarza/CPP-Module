@@ -11,7 +11,7 @@ int main(int ac, char **av)
 	k.complain("INFO");
 	k.complain("WARNING");
 	k.complain("ERROR");
-	k.complain("lol");
+	//k.complain("lol");
 
 	return (0);
 }

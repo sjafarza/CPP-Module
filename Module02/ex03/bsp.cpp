@@ -1,23 +1,35 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-float sign(Point const p1, Point const p2, Point const p3)
-{
-	return (p1.getX().toFloat() - p3.getX().toFloat()) * (p2.getY().toFloat() - p3.getY().toFloat()) - (p2.getX().toFloat() - p3.getX().toFloat()) * (p1.getY().toFloat() - p3.getY().toFloat());
+float abs(float i) { return i < 0 ? -i : i; }
+
+Fixed area(Point const& a, Point const& b, Point const& c) {
+  // Area = | (ax(by - cy) + bx(cy - ay) + cx(ay - by)) / 2 |
+  float area =
+      (a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()) +
+       b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()) +
+       c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())) /
+      2.0f;
+	  std::cout << "area = " << area << std::endl;
+  return Fixed(abs(area));
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const pnt)
-{
-		float d1, d2, d3;
-		bool has_neg, has_pos;
+bool bsp(Point const a, Point const b, Point const c, Point const point) {
+  Fixed ABC = area(a, b, c);
+  Fixed PAB = area(point, a, b);
+  Fixed PBC = area(point, b, c);
+  Fixed PAC = area(point, a, c);
 
-		
-		d1 = sign(pnt, a, b);
-		d2 = sign(pnt, b, c);
-		d3 = sign(pnt, c, a);
+  std::cout << "Area of triangle  ABC: " << ABC << std::endl;
+  std::cout << "Area of PAB: " << PAB << std::endl;
+  std::cout << "Area of PBC: " << PBC << std::endl;
+  std::cout << "Area of PAC: " << PAC << std::endl;
+  std::cout << "Total PAB + PBC + PAC: " << PAB + PBC + PAC << std::endl
+            << std::endl;
 
-		has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-		has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
-
-		return !(has_neg && has_pos);
+  if (PAB + PBC + PAC == ABC && PAB.getRawBits() != 0 &&
+      PBC.getRawBits() != 0 && PAC.getRawBits() != 0) {
+    return true;
+  }
+  return false;
 }

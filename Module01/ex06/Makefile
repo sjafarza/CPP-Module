@@ -7,8 +7,8 @@ INCDIR	=	inc
 SRC 	=	main.cpp Karen.cpp
 OBJ 	=	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
-CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 INCFLAGS	=	-I./$(INCDIR)
 
 RM		=	rm -rf 
@@ -17,11 +17,11 @@ UNAME	:=	$(shell uname -s)
 all:	$(NAME)
 
 $(OBJDIR)/%.o:	%.cpp | $(OBJDIR)
-				@clang++ $(CFLAG) $(INCFLAG) -c $< -o $@
+				@c++ $(CFLAG) $(INCFLAG) -c $< -o $@
 
 $(NAME):		$(OBJ)
 				@echo "\033[032m\n\nCompiling Karen... "
-				@clang++ $(CFLAGS) -o $@ $^ $(LFLAGS)
+				@c++ $(CFLAGS) -o $@ $^ $(LFLAGS)
 				@echo "\n\033[0mDone !"
 
 $(OBJDIR):

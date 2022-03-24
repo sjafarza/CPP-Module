@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sjafarza <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 10:41:25 by sjafarza          #+#    #+#             */
+/*   Updated: 2022/03/11 11:06:11 by sjafarza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brainz.hpp"
 
 void    creatRandomZombie(void)
@@ -14,7 +26,6 @@ int main(int ac, char **av)
     (void)ac;
     (void)av;
 
-    Zombie *zombie;
 
     if (ac > 2)
     {
@@ -26,7 +37,9 @@ int main(int ac, char **av)
     }
     else
     {
+    	Zombie *zombie;
         zombie = newZombie(av[1]);
         delete zombie;
     }
+    return (0);
 }

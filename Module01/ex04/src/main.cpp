@@ -21,6 +21,14 @@ void    replace(char **av)
 
 int main(int ac, char **av)
 {
+
+
+    if (ac == 1)
+    {
+        std::cout << "Error: Must have 3 args ...\n";
+        return (1);
+    }
+
     std::string     fileName = av[1];
     std::ifstream   fileStream(fileName);
     Stream           stream(fileName);

@@ -8,8 +8,8 @@ SRC 		=	main.cpp randomChump.cpp newZombie.cpp ClassZombie.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
-CC			=	clang++
-CFLAG		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CC			=	c++
+CFLAG		=	-Wall -Wextra -Werror -std=c++98
 INCFLAGS	=	-I./$(INCLDIR)
 
 RM			=	rm -rf
@@ -17,11 +17,11 @@ UNAME           :=      $(shell uname -s)
 
 all:			$(NAME)
 $(OBJDIR)/%.o:	%.cpp | $(OBJDIR)
-					@clang++ $(CFLAGS) $(INCFLAGS) -c $< -o $@
+					@c++ $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJ)
-				@echo "\033[032m\n\nCompiling PhoneBook... "
-				@clang++ $(CFLAGS) -o $@ $^ $(LFLAGS)
+				@echo "\033[032m\n\nCompiling BraiiiiiiinnnzzzZ... "
+				@c++ $(CFLAGS) -o $@ $^ $(LFLAGS)
 				@echo "\n\033[0mDone !"
 
 $(OBJDIR):
