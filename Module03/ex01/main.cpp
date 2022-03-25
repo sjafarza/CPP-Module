@@ -5,6 +5,7 @@
 int main(void)
 {
 	ClapTrap clap("Human");
+	std::cout << "***************************" << std::endl;
 	ScavTrap scarv("saray");
 
 	scarv.attack("cpp03 module");

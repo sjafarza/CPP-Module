@@ -11,10 +11,13 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clapName"),ScavTr
 
 	ClapTrap::_name = this->_name + "_clap_name";
 	this->_name = name;
-	//this->_HitPoints = FragTrap::Hitpoints;
-	this->_HitPoints = 100;
+	this->_HitPoints = this->FragTrap::_HitPoints;
+	this->_EnergyPoints = this->ScavTrap::_EnergyPoints;
+	this->_HitPoints = this->FragTrap::_HitPoints;
+	this->_AttackDamage = this->FragTrap::_AttackDamage;
+	/*this->_HitPoints = 100;
 	this->_EnergyPoints = 50;
-	this->_AttackDamage= 20;
+	this->_AttackDamage= 20;*/
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	return;
 }
@@ -30,7 +33,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& rval)
 {
 	if (*this != rval)
 	{
-		this->name = rval._name;
+		this->_name = rval._name;
 		this->_HitPoints = rval._HitPoints;
 		this->_EnergyPoints = rval._EnergyPoints;
 		this->_AttackDamage = rval._AttackDamage;
@@ -45,10 +48,10 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::attack(std::string const & target)
 {
-	ScavTrap::attack(target);
+	this->ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "My name is : "<< _name<<" and my claptrap name is : "<< _name + "_clapName"<< std::endl;
+	std::cout << "My name is : "<< this->_name<<" and my claptrap name is : "<< this->ClapTrap::_name + "_clapName"<< std::endl;
 }

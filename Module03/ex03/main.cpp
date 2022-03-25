@@ -1,22 +1,25 @@
 #include <iostream>
+
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
+# include "DiamondTrap.hpp"
 
 int main(void)
 {
-	std::cout<<"\n**********building objects*********\n"<<std::endl;
+	std::cout<<"**********building objects*********"<<std::endl;
 
 	ScavTrap clap("Human");
 	ScavTrap scarv("Saray");
-	FragTrap frag("frag_Name");
+	FragTrap frag("fragoo");
 
-	std::cout<<"\n**********methods*********\n"<<std::endl;
+	std::cout<<"**********methods*********"<<std::endl;
+
 
 	scarv.attack("cpp03 module");
-	clap.ClapTrap::attack("Cpp04");
+	clap.ClapTrap::attack("badones");
 	frag.attack("others");
-	frag.ClapTrap::attack("non fragoo");
+	frag.ClapTrap::attack("nonfragoo");
 	frag.highFivesGuys();
 	scarv.takeDamage(3);
 	std::cout<<scarv.getEnergypoints()<<std::endl;
@@ -27,6 +30,17 @@ int main(void)
 	scarv.takeDamage(1);
 	std::cout<<scarv.getEnergypoints()<<std::endl;
 	scarv.guardGate();
+
+	std::cout<<"*******************"<<std::endl;
+
+	DiamondTrap diamonds("shineandbright");
+	diamonds.whoAmI();
+	diamonds.attack("youandi");
+	diamonds.getEnergypoints();
+	diamonds.guardGate();
+	diamonds.highFivesGuys();
+	diamonds.beRepaired(6);
+	std::cout<<"*******************"<<std::endl;
 
 	std::cout<<"\n**********destructions*********"<<std::endl;
 	return (0);
