@@ -15,7 +15,7 @@ int main(void)
 
 	scarv.attack("cpp03 module");
 	clap.ClapTrap::attack("badones");
-	frag.attack("others");
+	frag.attack("Cpp04 module");
 	frag.ClapTrap::attack("nonfragoo");
 	frag.highFivesGuys();
 	scarv.takeDamage(3);

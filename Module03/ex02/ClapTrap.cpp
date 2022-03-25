@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+    std::cout<<"Standard Constructor called  with Energy 10 !"<<std::endl;
+}
+
 ClapTrap::ClapTrap(std::string  name)
 {
     this->_name = name;

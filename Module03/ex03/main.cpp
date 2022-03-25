@@ -9,14 +9,14 @@ int main(void)
 
 	ScavTrap clap("Human");
 	ScavTrap scarv("Saray");
-	FragTrap frag("fragoo");
+	FragTrap frag("frag_Name");
 
 	std::cout<<"\n**********methods*********\n"<<std::endl;
 
 	scarv.attack("cpp03 module");
-	clap.ClapTrap::attack("badones");
+	clap.ClapTrap::attack("Cpp04");
 	frag.attack("others");
-	frag.ClapTrap::attack("nonfragoo");
+	frag.ClapTrap::attack("non fragoo");
 	frag.highFivesGuys();
 	scarv.takeDamage(3);
 	std::cout<<scarv.getEnergypoints()<<std::endl;

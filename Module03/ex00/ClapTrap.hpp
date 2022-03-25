@@ -10,6 +10,7 @@ class ClapTrap
         unsigned int    _HitPoints;
         unsigned int    _EnergyPoints;
         unsigned int    _AttackDamage;
+    
 
     public:
     /* constructor */
