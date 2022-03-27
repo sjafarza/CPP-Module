@@ -1,10 +1,10 @@
-NAME		=	canon
+NAME		=	Animal
 
 VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Fixed.cpp
+SRC 		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
@@ -36,6 +36,7 @@ clean:
 
 fclean:			clean
 				@rm -rf $(NAME) $(OBJDIR)
+				@echo "\033[0;31m\nDone !"
 
 re:				fclean all
 
