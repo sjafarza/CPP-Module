@@ -11,18 +11,19 @@ Cat::~Cat()
     std::cout << "DeConstructor Cat call !" << std::endl;
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
-    
+    *this = other;
     std::cout << "Constructor Copy Cat call !" << std::endl;
 }
 
 Cat& Cat::operator = (const Cat& rval)
 {
-    if (*this != rval) 
+    if (this != &rval) 
     {
         this->_type = rval._type;
     }
+    std::cout << "Passing through Cat operator=() overload" << std::endl;
     return (*this);
 }
 

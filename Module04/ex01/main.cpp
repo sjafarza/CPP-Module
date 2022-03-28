@@ -10,7 +10,7 @@ int main(void)
 	Animal	*anim[10];
 	Brain	*brain;
 
-for(int i = 0; i < 10; i++)
+	for(int i = 0; i < 10; i++)
 	{
 		if (i < 10 / 2)
 			anim[i] = new Cat();
@@ -30,10 +30,11 @@ for(int i = 0; i < 10; i++)
 	*(anim[2]) = *(anim[0]);
 	std::cout<<anim[2]->getBrain()->_ideas[0]<<std::endl;
 	std::cout<<"*************** destruction *************"<<std::endl;
-	for(int i = 0; i < 10; i++) 
+	for(int i = 0; i < 10; i++)
 	{
 		std::cout<<"Array["<<i<<"]";
 		delete anim[i];
 	}
+
 	return (0);
 }

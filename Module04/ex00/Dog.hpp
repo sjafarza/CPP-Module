@@ -11,7 +11,7 @@ class Dog : virtual public Animal
 
     public:
         Dog();
-        ~Dog();
+        virtual ~Dog();
 
         Dog(const Dog& other);
 

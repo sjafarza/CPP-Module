@@ -19,7 +19,7 @@ WrongCat::WrongCat(const WrongCat& other)
 
 WrongCat& WrongCat::operator = (const WrongCat& rval)
 {
-    if (*this != rval) 
+    if (this != &rval) 
     {
         this->_type = rval._type;
     }

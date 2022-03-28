@@ -3,7 +3,7 @@
 Dog::Dog()
 {
     this->_type = "Dog";
-    this->_Brain = new Brain;
+    this->_Brain = new Brain();
     std::cout << "Constructor Dog call !" << std::endl;
 }
 
@@ -24,6 +24,7 @@ Dog& Dog::operator = (const Dog& rval)
     if (*this != rval) 
     {
         this->_type = rval._type;
+        this->brain = new Brain(*(rval.brain));
     }
     return (*this);
 }

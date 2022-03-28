@@ -10,12 +10,12 @@ class Animal
 
     public:
         Animal();
-        ~Animal();
+        virtual ~Animal();
 
         Animal(const Animal& other);
 
-        Animal& operator = (const Animal& rval);
-        bool    operator != (const Animal& rhv) const;
+        virtual Animal& operator = (const Animal& rval);
+        //bool    operator != (const Animal& rhv) const;
 
         const std::string&  getType(void) const;
         virtual void makeSound(void) const;

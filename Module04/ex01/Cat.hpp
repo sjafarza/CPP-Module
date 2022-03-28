@@ -12,7 +12,7 @@ class Cat : virtual public Animal
 
     public:
         Cat();
-        ~Cat();
+        virtual ~Cat();
 
         Cat(const Cat& other);
 

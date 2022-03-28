@@ -11,18 +11,20 @@ Dog::~Dog()
     std::cout << "DeConstructor Dog call !" << std::endl;
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : Animal(other)
 {
     
     std::cout << "Constructor Copy Dog call !" << std::endl;
+    *this = other;
 }
 
 Dog& Dog::operator = (const Dog& rval)
 {
-    if (*this != rval) 
+    if (this != &rval) 
     {
         this->_type = rval._type;
     }
+    std::cout << "Passing through Dog operator=() overload" << std::endl;
     return (*this);
 }
 

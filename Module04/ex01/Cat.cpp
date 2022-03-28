@@ -3,7 +3,7 @@
 Cat::Cat()
 {
     this->_type = "Cat";
-    this->_Brain = new Brain;
+    this->_Brain = new Brain();
     std::cout << "Constructor Cat call !" << std::endl;
 }
 
@@ -24,6 +24,7 @@ Cat& Cat::operator = (const Cat& rval)
     if (*this != rval) 
     {
         this->_type = rval._type;
+        this->brain = new Brain(*(rval.brain));
     }
     return (*this);
 }

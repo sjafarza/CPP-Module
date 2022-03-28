@@ -2,6 +2,8 @@
 # include "Animal.hpp"
 # include "Cat.hpp"
 # include "Dog.hpp"
+# include "WrongAnimal.hpp"
+# include "WrongCat.cpp"
 
 
 int main(void)
@@ -14,6 +16,17 @@ int main(void)
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
+
+	/*const WrongAnimal* a = new WrongCat();
+	std::cout << a->getType() << " " << std::endl;
+	a->makeSound();
+	WrongCat b;
+	std::cout << b.getType() << " " << std::endl;
+	b.makeSound();
+	delete a;*/
 
 	return (0);
 }

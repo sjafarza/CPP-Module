@@ -34,6 +34,7 @@ bool    WrongAnimal::operator != (const WrongAnimal& rhv) const
 std::ostream&   operator<<(std::ostream& o, WrongAnimal const& i)
 {
     o << *((WrongAnimal*)(&i));
+    return (o);
 }
 
 const std::string&  WrongAnimal::getType(void) const
