@@ -7,16 +7,21 @@ int main(void)
 {
 	std::cout<<"\n**********building objects*********\n"<<std::endl;
 
-	ScavTrap clap("Human");
+	ClapTrap clap("Human");
+	ClapTrap clapCopy(clap);
+	std::cout << "***" << std::endl;
 	ScavTrap scarv("Saray");
+	ScavTrap scarvCopy(scarv);
+	std::cout << "***" << std::endl;
 	FragTrap frag("fragoo");
+	FragTrap fragCopy(frag);
 
 	std::cout<<"\n**********methods*********\n"<<std::endl;
 
 	scarv.attack("cpp03 module");
-	clap.ClapTrap::attack("badones");
-	frag.attack("Cpp04 module");
-	frag.ClapTrap::attack("nonfragoo");
+	clap.attack("badones");
+	frag.attack("others");
+	frag.attack("nonfragoo");
 	frag.highFivesGuys();
 	scarv.takeDamage(3);
 	std::cout<<scarv.getEnergypoints()<<std::endl;

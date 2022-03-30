@@ -1,15 +1,16 @@
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
 # include "ClapTrap.hpp"
 # include <iostream>
 # include <string>
 
-class ScavTrap: virtual public ClapTrap
+class ScavTrap:virtual  public ClapTrap
 {
     private:
     
     public:
+        ScavTrap();
         ScavTrap(std::string name);
 	    ~ScavTrap();
 

@@ -10,10 +10,10 @@ class ClapTrap
         unsigned int    _HitPoints;
         unsigned int    _EnergyPoints;
         unsigned int    _AttackDamage;
-    
 
     public:
     /* constructor */
+        ClapTrap();
         ClapTrap(std::string    name);
 
     /* Destructor */
@@ -29,12 +29,13 @@ class ClapTrap
        void attack(std::string const & target);
        void takeDamage(unsigned int amount);
        void beRepaired(unsigned int amount);
-       unsigned int getHitpoints(void);
-       unsigned int getEnergypoints(void);
-       unsigned int getAttackdamage(void);
-       std::string  getName(void);
+       
+       unsigned int getHitpoints(void) const;
+       unsigned int getEnergypoints(void) const;
+       unsigned int getAttackdamage(void)const;
+       std::string  getName(void) const;
 
-       bool    operator !=(const ClapTrap& other) const;
+       //bool    operator !=(const ClapTrap& other) const;
 };
        
 std::ostream&   operator<<(std::ostream& o, ClapTrap const& i);

@@ -31,7 +31,7 @@ $(OBJDIR):
 
 clean:
 				@echo "\033[0;31m\nDeleting objects ..."
-				@rm $(OBJ)
+				@rm -rf $(OBJ)
 				@echo "\033[0m"
 
 fclean:			clean

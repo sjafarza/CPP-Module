@@ -1,5 +1,12 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap()
+{
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 100;
+	this->_AttackDamage = 30;
+	std::cout<<"FragTrap constructor called with 100 energypoints !"<<std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
@@ -9,9 +16,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout<<"FragTrap constructor called with 100 energypoints !"<<std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other) :ClapTrap(other._name)
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
-    *this = other;
+    //*this = other;
     std::cout << "Copy Constructor of FragTrap called !"<<std::endl;
 }
  
@@ -22,12 +29,24 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout<<"hi fives guys :D" <<std::endl;
+	std::cout<<"High-five, fives guys :D" <<std::endl;
 }
 
 void FragTrap::attack(std::string const & target)
 { 
-	std::cout<<"Fragtrap "<<_name<<" attack " <<target<<", causing "<< getAttackdamage()<< " of damage!"<<std::endl;
+	if (this->_HitPoints < 1)
+	{
+		std::cout << "FragTrap " << this->_name <<  " can't attack. It was finish. " << std::endl;
+		return ;
+	}
+	if (this->_EnergyPoints > 0)
+	{
+		std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" << std::endl;
+		this->_EnergyPoints -= 1;
+	}
+	else
+		std::cout << "FragTrap " << this->_name << " tries to attack " << target << ", but instead, says : \"NoT EnougH ManA\"" << std::endl;
+
 }
 
 FragTrap&   FragTrap::operator=(FragTrap const& rhs)
@@ -37,9 +56,9 @@ FragTrap&   FragTrap::operator=(FragTrap const& rhs)
 	if ( this != &rhs )
 	{
 		(ClapTrap)(*this) = (ClapTrap)(rhs);
-		this->_EnergyPoints = rhs._EnergyPoints;
+		/*this->_EnergyPoints = rhs._EnergyPoints;
 		this->_HitPoints = rhs._HitPoints;
-		this->_AttackDamage = rhs._AttackDamage;
+		this->_AttackDamage = rhs._AttackDamage;*/
 	}
 	return *this;
 }
@@ -47,4 +66,5 @@ FragTrap&   FragTrap::operator=(FragTrap const& rhs)
 std::ostream&   operator<<(std::ostream& o, FragTrap const& i)
 {
     o << *((FragTrap *)(&i));
+	return (o);
 }

@@ -13,14 +13,14 @@ class ClapTrap
 
     public:
     /* constructor */
+        ClapTrap();
         ClapTrap(std::string    name);
 
     /* Destructor */
-        ~ClapTrap(void);
+       ~ClapTrap(void);
 
     /* copy Constructor*/
         ClapTrap(const ClapTrap& other);
-
     /* operation  overload */
        ClapTrap& operator=(ClapTrap const& rval);
        
@@ -28,12 +28,13 @@ class ClapTrap
        void attack(std::string const & target);
        void takeDamage(unsigned int amount);
        void beRepaired(unsigned int amount);
-       unsigned int getHitpoints(void);
-       unsigned int getEnergypoints(void);
-       unsigned int getAttackdamage(void);
-       std::string  getName(void);
+       
+       unsigned int getHitpoints(void) const;
+       unsigned int getEnergypoints(void) const;
+       unsigned int getAttackdamage(void)const;
+       std::string  getName(void) const;
 
-       bool    operator !=(const ClapTrap& other) const;
+       //bool    operator !=(const ClapTrap& other) const;
 };
        
 std::ostream&   operator<<(std::ostream& o, ClapTrap const& i);
