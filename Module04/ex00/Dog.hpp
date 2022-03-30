@@ -4,7 +4,7 @@
 # include <iostream>
 #include "Animal.hpp"
 
-class Dog : virtual public Animal
+class Dog : public Animal
 {
     private:
         
@@ -14,10 +14,9 @@ class Dog : virtual public Animal
         virtual ~Dog();
 
         Dog(const Dog& other);
-
         Dog& operator = (const Dog& rval);
 
-        void    makeSound(void) const;
+        virtual void    makeSound(void) const;
 
 };
 

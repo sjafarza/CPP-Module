@@ -3,7 +3,7 @@
 # include "Cat.hpp"
 # include "Dog.hpp"
 # include "WrongAnimal.hpp"
-# include "WrongCat.cpp"
+# include "WrongCat.hpp"
 
 
 int main(void)
@@ -20,13 +20,25 @@ int main(void)
 	delete j;
 	delete i;
 
-	/*const WrongAnimal* a = new WrongCat();
-	std::cout << a->getType() << " " << std::endl;
+	std::cout << "***************" <<std::endl;
+
+	const WrongAnimal* a = new WrongAnimal();
+	std::cout<<"1***"<< std::endl;
+	const WrongAnimal* jj= new WrongCat();
+	std::cout<<"***"<< std::endl;
+	std::cout << "type : " << a->getType() << " for WrongAnimal " << std::endl;
+	std::cout<<"2***"<< std::endl;
+	std::cout << "type : " <<   jj->getType() << " for WrongCat " << std::endl;
+	std::cout<<"3***"<< std::endl;
 	a->makeSound();
+	jj->makeSound();
+	std::cout << "4***"<< std::endl;
 	WrongCat b;
 	std::cout << b.getType() << " " << std::endl;
 	b.makeSound();
-	delete a;*/
+	std::cout << "*************deconstractors********************"<< std::endl;
+	delete a;
+	delete	jj;
 
 	return (0);
 }

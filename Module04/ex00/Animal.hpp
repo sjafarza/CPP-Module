@@ -15,9 +15,8 @@ class Animal
         Animal(const Animal& other);
 
         virtual Animal& operator = (const Animal& rval);
-        //bool    operator != (const Animal& rhv) const;
 
-        const std::string&  getType(void) const;
+        std::string  getType(void) const;
         virtual void makeSound(void) const;
 };
 std::ostream&   operator<<(std::ostream& o, Animal const& i);

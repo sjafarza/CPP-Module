@@ -26,18 +26,13 @@ Animal& Animal::operator = (const Animal& rval)
     return (*this);
 }
 
-/*bool    Animal::operator != (const Animal& rhv) const
-{
-    return (this->_type != rhv._type);
-}*/
-
 std::ostream&   operator<<(std::ostream& o, Animal const& i)
 {
     o << *((Animal*)(&i));
     return (o);
 }
 
-const std::string&  Animal::getType(void) const
+std::string  Animal::getType(void) const
 {
     return (this->_type);
 }
