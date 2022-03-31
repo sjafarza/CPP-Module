@@ -2,7 +2,7 @@
 
 WrongAnimal::WrongAnimal()
 {
-    this->_type = "";
+    this->_type = "WrongAnimal";
     std::cout << "Constructor WrongAnimal call !" << std::endl;
 }
 
@@ -11,9 +11,9 @@ WrongAnimal::~WrongAnimal()
     std::cout << "DeConstructor WrongAnimal call !" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& other)
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : _type(other._type)
 {
-    *this = other;
+    //*this = other;
     std::cout << "Constructor Copy WrongAnimal call !" << std::endl;
 }
 
@@ -26,17 +26,13 @@ WrongAnimal& WrongAnimal::operator = (const WrongAnimal& rval)
     return (*this);
 }
 
-bool    WrongAnimal::operator != (const WrongAnimal& rhv) const
-{
-    return (this->_type != rhv._type);
-}
-
 std::ostream&   operator<<(std::ostream& o, WrongAnimal const& i)
 {
     o << *((WrongAnimal*)(&i));
+    return (o);
 }
 
-const std::string&  WrongAnimal::getType(void) const
+std::string  WrongAnimal::getType(void) const
 {
     return (this->_type);
 }

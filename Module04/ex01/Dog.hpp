@@ -5,21 +5,19 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog : virtual public Animal
+class Dog : public Animal
 {
     private:
-        Brain*   _Brain;
+         Brain*  _Brain;
 
     public:
         Dog();
         virtual ~Dog();
 
         Dog(const Dog& other);
-
         Dog& operator = (const Dog& rval);
 
-        void    makeSound(void) const;
-        Brain*  getBrain(void) const;
+        virtual void    makeSound(void) const;
 
 };
 

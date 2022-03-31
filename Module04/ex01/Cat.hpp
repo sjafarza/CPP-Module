@@ -2,24 +2,22 @@
 # define Cat_HPP
 
 # include <iostream>
-#include "Animal.hpp"
-#include  "Brain.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : virtual public Animal
+class Cat : public Animal
 {
     private:
-        Brain*   _Brain;
+        Brain*  _Brain;
 
     public:
         Cat();
         virtual ~Cat();
 
         Cat(const Cat& other);
-
         Cat& operator = (const Cat& rval);
 
-        void    makeSound(void) const;
-        Brain*  getBrain(void) const;
+        virtual void    makeSound(void) const;
 };
 
 #endif

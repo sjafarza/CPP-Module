@@ -1,6 +1,8 @@
 #include <iostream>
 # include "Animal.hpp"
+# include "WrongAnimal.hpp"
 # include "Cat.hpp"
+# include "WrongAnimal.hpp"
 # include "Dog.hpp"
 # include "Brain.hpp"
 

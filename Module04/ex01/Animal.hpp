@@ -15,12 +15,12 @@ class Animal
 
         Animal(const Animal& other);
 
-        Animal& operator = (const Animal& rval);
-        bool    operator != (const Animal& rhv) const;
+        virtual Animal& operator = (const Animal& rval);
 
-        const std::string&  getType(void) const;
+        virtual std::string  getType(void) const;
         virtual void makeSound(void) const;
-        virtual Brain		*getBrain( void ) const = 0;
+
+        virtual Brain* getBrain(void) const;
 };
 std::ostream&   operator<<(std::ostream& o, Animal const& i);
 

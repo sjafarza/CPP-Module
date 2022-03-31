@@ -4,20 +4,18 @@
 # include <iostream>
 #include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
-    private:
-        
-
+    private:  
+       
     public:
         WrongCat();
-        ~WrongCat();
+        virtual ~WrongCat();
 
         WrongCat(const WrongCat& other);
-
         WrongCat& operator = (const WrongCat& rval);
 
-        void    makeSound(void) const;
+       virtual void makeSound(void) const;
 };
 
 #endif
