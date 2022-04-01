@@ -11,12 +11,21 @@ int main(void)
 {
 	Animal	*anim[10];
 	Brain	*brain;
-	std::cout << "***" << std::endl;
+	std::cout << "**test deep copy **" << std::endl;
 	Dog	basic;
-	basic.barin->-_ideas[0] = "test brain";
-	std::cout << "barin basic : " << basic.getBrain() << std::endl;
+	brain = basic.getBrain();
+	brain->_ideas[0] = "test brain";
+	std::cout << "barin basic : " << basic.getBrain()->_ideas[0] << std::endl;
 	Dog tmp = basic;
-	td::cout << "barin tmp : " << tmp.getBrain() << std::endl;
+	std::cout << "barin tmp : " << tmp.getBrain()->_ideas[0] << std::endl;
+
+	std::cout << "**test deep constracture copy **" << std::endl;
+	Cat	basic2;
+	brain = basic.getBrain();
+	brain->_ideas[0] = "test2 brain";
+	std::cout << "barin basic : " << basic.getBrain()->_ideas[0] << std::endl;
+	Cat	tmp2(basic2);
+	std::cout << "barin tmp : " << tmp.getBrain()->_ideas[0] << std::endl;
 
 	std::cout << "1***" << std::endl;
 
@@ -46,6 +55,8 @@ int main(void)
 		std::cout<<"Array["<<i<<"]";
 		delete anim[i];
 	}
+
+	std::cout<<" ****fin****" << std::endl;
 
 	return (0);
 }
