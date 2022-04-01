@@ -11,6 +11,14 @@ int main(void)
 {
 	Animal	*anim[10];
 	Brain	*brain;
+	std::cout << "***" << std::endl;
+	Dog	basic;
+	basic.barin->-_ideas[0] = "test brain";
+	std::cout << "barin basic : " << basic.getBrain() << std::endl;
+	Dog tmp = basic;
+	td::cout << "barin tmp : " << tmp.getBrain() << std::endl;
+
+	std::cout << "1***" << std::endl;
 
 	for(int i = 0; i < 10; i++)
 	{
@@ -20,6 +28,7 @@ int main(void)
 			anim[i] = new Dog();
 		std::cout<<"TAB["<<i<<"] = " << anim[i]->getType() << std::endl;
 	}
+	std::cout << "2***" << std::endl;
 	brain = anim[0]->getBrain();
 	brain->_ideas[0] = "i want loooo0ove !!";
 	brain->_ideas[1] = "i want to eat, but i just did , why not eating again  !!";

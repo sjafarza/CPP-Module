@@ -36,3 +36,9 @@ void    Dog::makeSound(void) const
 {
     std:: cout << "Hop ! Hop ... I am Dog" << std::endl;
 }
+
+Brain* Dog::getBrain(void) const
+{
+    std::cout << "Dog getBrain !" << std::endl;
+    return (this->_Brain);
+}

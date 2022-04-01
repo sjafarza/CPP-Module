@@ -35,3 +35,9 @@ void    Cat::makeSound(void) const
 {
     std:: cout << "Mioo ! Mioo ... I am Cat" << std::endl;
 }
+
+Brain* Cat::getBrain(void) const
+{
+    std::cout << "cat getBrain !" << std::endl;
+    return (this->_Brain);
+}
