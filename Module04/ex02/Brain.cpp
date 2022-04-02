@@ -29,6 +29,7 @@ Brain& Brain::operator = (const Brain& rval)
 std::ostream&   operator<<(std::ostream& o, Brain const& i)
 {
     o << *((Brain*)(&i));
+    return (o);
 }
 
 const std::string*  Brain::getBrain(void) const

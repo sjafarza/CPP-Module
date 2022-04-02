@@ -17,7 +17,7 @@ class WrongAnimal
         virtual WrongAnimal& operator = (const WrongAnimal& rval);
 
         std::string  getType(void) const;
-        virtual void makeSound(void) const;
+        void makeSound(void) const;
 };
 
 std::ostream&   operator<<(std::ostream& o, WrongAnimal const& i);

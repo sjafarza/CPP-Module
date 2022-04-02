@@ -22,6 +22,7 @@ Animal& Animal::operator = (const Animal& rval)
     if (this != &rval)
     {
         this->_type = rval._type;
+        *(this->getBrain()) = *(rval.getBrain());
     }
     return (*this);
 }

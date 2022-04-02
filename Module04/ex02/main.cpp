@@ -11,6 +11,9 @@ int main(void)
 {
 	Animal	*anim[10];
 	Brain	*brain;
+	std::cout<<"test prodection instance of animal" <<std::endl;
+	//Animal	AnimalTest;
+
 	std::cout << "**test deep copy **" << std::endl;
 	Dog	basic;
 	brain = basic.getBrain();
