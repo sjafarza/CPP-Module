@@ -4,6 +4,9 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 # include <exception>
+
+class   Bureaucrat;
+
 class Form
 {
     private:
@@ -31,10 +34,31 @@ class Form
 
         //***********methodes**************************
 
-        void    beSigned()
+        void    beSigned(Bureaucrat b);
 
+        class GradeTooHighException: public std::exception
+        {
+            public:
+            
+            virtual const char* what() const throw()
+            {
+                return("Form : Grade is Too High ! ");
+            }
 
+        };
 
+        class GradeTooLowException: public std::exception
+        {
+            public :
+            
+            virtual const char* what() const throw()
+            {
+                return ("Form : Grade is Too Low ! ");
+            }
+
+        };
 };
+
+std::ostream& operator<<(std::ostream& o, Form const& i);
 
 #endif

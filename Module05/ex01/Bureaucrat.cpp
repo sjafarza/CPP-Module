@@ -54,6 +54,20 @@ void               Bureaucrat::upGrade()
     _grade--;    
 }
 
+void              Bureaucrat::sigForm(Form& f)
+{
+      try
+    {
+        f.beSigned(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << _name << "couldn't sign " << f.getName() << "because " <<  e.what() << std::endl;
+        return ;
+    }
+    std::cout << _name << " signed " << f.getName() << std::endl;
+}
+
 std::ostream&   operator<<(std::ostream& o, Bureaucrat const& i)
 {
     o << i.getName() << " , bureaucrat Grade : " << i.getGrade() << std::endl;

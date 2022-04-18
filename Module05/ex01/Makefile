@@ -4,7 +4,7 @@ VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Bureaucrat.cpp
+SRC 		=	main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
