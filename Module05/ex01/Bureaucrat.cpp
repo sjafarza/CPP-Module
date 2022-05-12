@@ -7,15 +7,15 @@ Bureaucrat::Bureaucrat() : _name("unnamed"), _grade(150)
 
 Bureaucrat::~Bureaucrat()
 {
-
+    std::cout << "Destroyed : " << _name << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     if (grade < 1)
-        throw GradeTooHighException();
+        throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
-        throw GradeTooLowException();
+        throw Bureaucrat::GradeTooLowException();
     else
         _grade = grade;  
 }

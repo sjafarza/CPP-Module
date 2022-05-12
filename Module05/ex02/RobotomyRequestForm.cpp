@@ -10,24 +10,24 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 :	Form(other),
 	_target(other.getTarget())
 {
 }
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
 	if (this != &other)
 		Form::operator=(other);
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequestform", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : Form("RobotomyRequestform", 72, 45), _target(target)
 {
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	if (!getSigGrade())
 		throw NotSignedException();

@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    std::cout << " *1*   Test to incrementing "<< std::endl;
+    std::cout << " *1*   Test to instants "<< std::endl;
     try
     {
         /*******Bureaucrat********************/

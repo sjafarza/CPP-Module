@@ -7,7 +7,7 @@ Form::Form() : _name("unnamed form"), _signed(0), _sigGrade(150), _exeGrade(150)
 
 Form::~Form()
 {
-    std::cout << "Destroyed : " << _name << std::endl;
+    //std::cout << "Destroyed : " << _name << std::endl;
 }
 
  Form::Form(std::string name, int sigGrade, int exeGrade): _name(name), _signed(0), _sigGrade(sigGrade), _exeGrade(exeGrade)
@@ -56,9 +56,13 @@ int             Form::getExeGrade() const
 void    Form::beSigned(Bureaucrat b)
 {
     if (b.getGrade() <= _sigGrade)
+    {
         _signed = 1;
+    }
     else
+    {
         throw   Form::GradeTooLowException();
+    }
         
 }
 

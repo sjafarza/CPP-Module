@@ -34,7 +34,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 		throw NotSignedException();
 	if (executor.getGrade() > this->getExeGrade())
 		throw GradeTooLowException();
-	std::cout << _target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
+	std::cout << _target << " has been don in function exe of PresidentialPardonForm ." << std::endl;
 }
 
 std::string		PresidentialPardonForm::getTarget() const
