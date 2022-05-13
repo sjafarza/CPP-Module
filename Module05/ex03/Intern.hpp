@@ -22,15 +22,19 @@ class Intern
 	
 	Intern();
 	virtual	~Intern();
-	Intern(Intern const &other);
-	Intern	&operator=(Intern const &other);
+	Intern(Intern const& other);
+
+	Intern& operator=(Intern const& other);
 
 	Form	*makeForm(std::string name, std::string target);
 
 	class InvalidFormNameException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw();
+			virtual const char* what() const throw()
+			{
+				return ("Invalid form name");
+			}
 	};
 };
 

@@ -15,13 +15,25 @@ int main(void)
     try
     {
         /*******Bureaucrat********************/
-        Bureaucrat n("normal", 4);
-        Bureaucrat max("max", 1);
-        Bureaucrat min("min", 150);
-       // Bureaucrat h("big", 154);
-       // Bureaucrat l("smal", 0);
+        Bureaucrat b1("B1", 4);
+        Bureaucrat b2("B2", 1);
+        Bureaucrat b3("B3", 150);
 
        /************Form*************************/
+        Form	*f1; /*a27;*/
+	    Form	*f2; /*b19;*/
+	    Form	*f3; /*c42;*/
+	    Form	*error;
+
+        Intern	someIntern;
+
+        f1 = someIntern.makeForm("shrubbery creation", "unknown");
+		f2 = someIntern.makeForm("robotomy request", "robo");
+		f3 = someIntern.makeForm("presidential pardon", "pre");
+        /* we could test avec different f1 , f2 , f3 */
+        b2.executeForm(*f2); 
+	    b2.sigForm(*f1);
+	    b2.executeForm(*f1);
 
     }
     catch(Bureaucrat::GradeTooHighException& e)
@@ -41,68 +53,8 @@ int main(void)
         std::cerr << e.what() << std::endl;
     }
 
-    /*std::cout << " *2*   Test to upgrade  & downgrade  normal "<< std::endl;
-    try
-    {
-        Bureaucrat n("normal", 4);
-        std::cout << n << std::endl;
-        n.upGrade();
-        std::cout << "after ungrade  : " << n << std::endl;
-        n.downGrade();
-        n.downGrade();
-        std::cout << "after 2 downgrade  : " << n << std::endl;
-        
-
-    }
-    catch(Bureaucrat::GradeTooHighException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    std::cout << " *3*   Test to upgrade  & downgrade  for Max "<< std::endl;
-    try
-    {
-        Bureaucrat m("max", 1);
-        std::cout << m << std::endl;
-        m.downGrade();
-        m.downGrade();
-        std::cout << "after 2 downgrade  : " << m << std::endl;
-        m.upGrade();
-        m.upGrade();
-        //m.upGrade();
-        std::cout << "after 2 upngrade  : " << m << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    std::cout << " *4*   Test to upgrade  & downgrade  for Min "<< std::endl;
-    try
-    {
-        Bureaucrat m("min", 150);
-        std::cout << m << std::endl;
-        m.downGrade();
-        std::cout << "after downgrade  : " << m << std::endl;
-        m.upGrade();
-        m.upGrade();
-        m.upGrade();
-        std::cout << "after 2 upngrade  : " << m << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }*/
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

@@ -17,9 +17,9 @@ Intern::Intern(const Intern &other)
 	*this = other;
 }
 
-Intern	&Intern::operator=(const Intern &other)
+Intern	&Intern::operator=(const Intern& other)
 {
-	(void)other;
+	//(void)other;
 	return (*this);
 }
 
@@ -58,9 +58,4 @@ Form	*Intern::_makeRobotomyRequest(const std::string &target)
 Form	*Intern::_makePresidentialPardon(const std::string &target)
 {
 	return (new PresidentialPardonForm(target));
-}
-
-const char*	Intern::InvalidFormNameException::what() const throw()
-{
-	return ("Invalid form name");
 }
