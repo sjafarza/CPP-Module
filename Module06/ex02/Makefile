@@ -1,10 +1,10 @@
-NAME		=	Convert
+NAME		=	Convert3
 
 VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Convert.cpp
+SRC 		=	main.cpp Base.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
