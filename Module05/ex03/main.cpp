@@ -35,8 +35,12 @@ int main(void)
 	    b2.sigForm(*f1);
 	    b2.executeForm(*f1);
 
+        delete f1;
+        delete f2;
+        delete f3;
+
     }
-    catch(Bureaucrat::GradeTooHighException& e)
+    /*catch(Bureaucrat::GradeTooHighException& e)
     {
         std::cerr << e.what() << std::endl;
     }
@@ -51,10 +55,14 @@ int main(void)
     catch(Form::GradeTooLowException& e)
     {
         std::cerr << e.what() << std::endl;
-    }
+    }*/
 
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
+
+        delete f1;
+        delete f2;
+        delete f3;
 	}
 }
