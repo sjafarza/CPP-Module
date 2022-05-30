@@ -1,10 +1,10 @@
-NAME		=	Convert3
+NAME		=	Array
 
 VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Base.cpp
+SRC 		=	main.cpp Array.hpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 
