@@ -9,7 +9,7 @@ class Span
 {
 	private :
 
-		unsigned			_N;
+		unsigned int		_N;
 		std::vector<int>	_vec;
 
 	public :
@@ -22,8 +22,8 @@ class Span
 		Span(const unsigned N);
 
 		void		addNumber(const int n);
-		unsigned	longestSpan(void);
-		unsigned	shortestSpan(void);
+		int	longestSpan(void);
+		int 	shortestSpan(void);
 
 		template <class Iter>
 		void	addRange(Iter begin, Iter end)

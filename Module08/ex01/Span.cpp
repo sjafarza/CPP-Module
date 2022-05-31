@@ -37,14 +37,14 @@ void	Span::addNumber(const int n)
 		throw CantAddMoreElement();
 }
 
-unsigned	Span::longestSpan(void)
+int	Span::longestSpan(void)
 {
 	if (_vec.size() < 2)
 		throw NotEnoughElements();
 	return (*std::max_element(_vec.begin(), _vec.end()) - *std::min_element(_vec.begin(), _vec.end()));
 }
 
-unsigned	Span::shortestSpan(void)
+int	Span::shortestSpan(void)
 {
 	unsigned min_span = longestSpan();
 	std::vector<int> tmp = _vec;

@@ -4,7 +4,7 @@ VPATH		=	src
 OBJDIR		=	obj
 INCLDIR		=	inc 
 
-SRC 		=	main.cpp Array.hpp
+SRC 		=	main.cpp
 
 OBJ 		=  	$(SRC:%.cpp=$(OBJDIR)/%.o)
 

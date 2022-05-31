@@ -9,7 +9,7 @@ class MutantStack : public std::stack<T>
 {
 	public :
 
-		MutantStack() {}
+		MutantStack() : std::stack<T>(){};
 		virtual ~MutantStack() {}
 		MutantStack(MutantStack const &other) : std::stack<T>(other) {}
 
@@ -21,15 +21,15 @@ class MutantStack : public std::stack<T>
 		}
 
 		typedef typename	std::stack<T>::container_type::iterator					iterator;
-		typedef typename	std::stack<T>::container_type::const_iterator			citerator;
+		/*typedef typename	std::stack<T>::container_type::const_iterator			citerator;
 		typedef typename	std::stack<T>::container_type::reverse_iterator			riterator;
-		typedef typename	std::stack<T>::container_type::const_reverse_iterator	criterator;
+		typedef typename	std::stack<T>::container_type::const_reverse_iterator	criterator;*/
 
 		iterator	begin() { return (this->c.begin()); }
 
 		iterator	end() { return (this->c.end()); }
 
-		citerator	begin() const { return (this->c.begin()); }
+		/*citerator	begin() const { return (this->c.begin()); }
 
 		citerator	end() const { return (this->c.end()); }
 
@@ -39,5 +39,5 @@ class MutantStack : public std::stack<T>
 
 		criterator	rbegin() const { return (this->c.rbegin()); }
 
-		criterator	rend() const { return (this->c.rend()); }
+		criterator	rend() const { return (this->c.rend()); }*/
 };
